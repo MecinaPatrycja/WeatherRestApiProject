@@ -1,0 +1,8 @@
+{
+  "realm": "master",
+  "auth-server-url": "http://localhost:8083/auth",
+  "resource": "client",
+  "credentials": {
+    "secret": "1b4410a9-eac8-4868-9f72-b864511080f0"
+  }
+}

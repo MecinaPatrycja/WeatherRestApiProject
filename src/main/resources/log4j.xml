@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="testFactoryAppender" class="org.apache.log4j.RollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="c:/holiday/logs/testFactory.log"/>
+        <param name="MaxFileSize" value="50MB" />
+        <param name="MaxBackupIndex" value="5" />
+        <!--<param name="DatePattern" value="'.'yyyy-MM-dd"/>-->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%C{1} %L %d{ISO8601} %10t %5p %c{2}: uid=%X{uid};pid=%X{processInstanceId};%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ImportAppender" class="org.apache.log4j.RollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="c:/holiday/logs/import.log"/>
+        <!--<param name="DatePattern" value="'.'yyyy-MM-dd"/>-->
+        <param name="MaxFileSize" value="5MB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%C{1} %L %d{ISO8601} %10t %5p %c{2}: uid=%X{uid};pid=%X{processInstanceId};%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="hibernateAppender" class="org.apache.log4j.RollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="c:/holiday/logs/hibernate.log"/>
+        <!--<param name="DatePattern" value="'.'yyyy-MM-dd"/>-->
+        <param name="MaxFileSize" value="50MB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%C{1} %L %d{ISO8601} %10t %5p %c{2}: uid=%X{uid};pid=%X{processInstanceId};%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="holiday" class="org.apache.log4j.RollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="c:/intelij_logs/holiday/logs/holiday.log"/>
+        <param name="MaxFileSize" value="50MB" />
+        <param name="MaxBackupIndex" value="5" />
+        <!--<param name="DatePattern" value="'.'yyyy-MM-dd-HH-mm"/>-->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%C{1} %L %d{ISO8601} %10t %5p %c{2}: uid=%X{uid};pid=%X{processInstanceId};%m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="ImportLogger">
+        <level value="INFO"/>
+        <appender-ref ref="ImportAppender"/>
+    </logger>
+
+    <logger name="org.hibernate">
+        <level value="INFO"/>
+        <appender-ref ref="hibernateAppender"/>
+    </logger>
+
+
+
+    <root>
+        <priority value="INFO"/>
+        <appender-ref ref="holiday"/>
+    </root>
+
+</log4j:configuration>
