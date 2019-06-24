@@ -1,4 +1,4 @@
-# Project Name
+# Weather Rest Api
 > WeatherRestApi is a weather api. It allows you to check the current weather and weather forecasts around the world.
 
 ## Table of contents
