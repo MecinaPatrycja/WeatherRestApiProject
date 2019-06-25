@@ -21,7 +21,7 @@ WeatherRestApi connects to two external api and extends their functionality. The
  ![](.readme_images/screenshot4.png)
  
  
-- checking current ppogoda for two cities at the same time:
+- checking current weather for two cities at the same time:
 
  ![](.readme_images/screenshot5.png)
  
